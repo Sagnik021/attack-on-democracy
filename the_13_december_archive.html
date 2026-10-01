@@ -1,0 +1,1216 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The 13 December Archive | Documentation, Memorialization & Analytical History (2001–2002)</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts: Cinzel (Classical Inscriptions), Merriweather (Archival Prose), Inter (Interface) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Cinzel', 'serif'],
+            serif: ['Cinzel', 'serif'],
+            prose: ['Merriweather', 'serif'],
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            obsidian: {
+              950: '#07090e',
+              900: '#0c0e14',
+              850: '#10141d',
+              800: '#141925',
+              700: '#1e2538',
+              600: '#2b344c'
+            },
+            brass: {
+              300: '#edd9a8',
+              400: '#dfba73',
+              500: '#c5a059',
+              600: '#a3813e',
+              700: '#7c5f28'
+            }
+          },
+          keyframes: {
+            flamePulse: {
+              '0%, 100%': { opacity: '0.85', transform: 'scale(1)' },
+              '50%': { opacity: '1', transform: 'scale(1.08)' }
+            },
+            waveform: {
+              '0%, 100%': { height: '8px' },
+              '50%': { height: '28px' }
+            }
+          },
+          animation: {
+            flame: 'flamePulse 3s ease-in-out infinite',
+            wave: 'waveform 1.2s ease-in-out infinite alternate'
+          }
+        }
+      }
+    }
+  </script>
+  
+  <style>
+    /* Custom scrollbar for archival theme */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0c0e14;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #2b344c;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #c5a059;
+    }
+    .text-balance {
+      text-wrap: balance;
+    }
+  </style>
+</head>
+
+<body class="bg-obsidian-950 text-gray-200 font-sans antialiased min-h-screen selection:bg-brass-500 selection:text-black flex flex-col">
+
+  <!-- Top Archival Navigation Bar -->
+  <header class="sticky top-0 z-40 bg-obsidian-950/90 backdrop-blur-md border-b border-obsidian-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand & Emblems -->
+      <a href="#hero" class="flex items-center space-x-3.5 group">
+        <div class="w-10 h-10 rounded-md border border-brass-500/50 bg-obsidian-900 flex items-center justify-center text-brass-400 group-hover:border-brass-400 transition-colors shadow-inner">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 21v-8m0 0V3m0 10l-4-4m4 4l4-4M3 21h18" />
+          </svg>
+        </div>
+        <div>
+          <div class="font-display font-bold tracking-widest text-white text-base sm:text-lg flex items-center gap-2">
+            THE 13 DECEMBER ARCHIVE
+            <span class="text-[10px] font-mono tracking-wider px-2 py-0.5 rounded bg-brass-500/10 text-brass-400 border border-brass-500/30 font-medium">2001–2002</span>
+          </div>
+          <div class="text-[11px] font-sans text-gray-400 tracking-wider uppercase">Parliament Attack Digital Records & Memorial</div>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden lg:flex items-center space-x-7 text-xs uppercase font-medium tracking-widest text-gray-300">
+        <a href="#memorial" class="hover:text-brass-400 transition-colors">Roll of Honour</a>
+        <a href="#chronology" class="hover:text-brass-400 transition-colors">Chronology (2001–02)</a>
+        <a href="#dossier" class="hover:text-brass-400 transition-colors">Dossier & Declassified</a>
+        <a href="#legal" class="hover:text-brass-400 transition-colors">Legal Jurisprudence</a>
+        <a href="#audio" class="hover:text-brass-400 transition-colors">Oral Testimonies</a>
+      </nav>
+
+      <!-- Tribute CTA Counter Button -->
+      <div class="flex items-center space-x-3">
+        <a href="#memorial" class="inline-flex items-center gap-2 px-3.5 py-2 rounded border border-brass-500/40 bg-brass-500/10 hover:bg-brass-500 hover:text-black text-brass-400 text-xs font-semibold uppercase tracking-wider transition-all duration-200">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path>
+          </svg>
+          <span>Pay Homage</span>
+        </a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobile-menu-btn" aria-label="Toggle Navigation Menu" class="lg:hidden p-2 rounded text-gray-400 hover:text-white border border-obsidian-700 bg-obsidian-900">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Dropdown -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-obsidian-900 border-b border-obsidian-800 px-6 py-4 space-y-3 text-xs uppercase tracking-wider text-gray-300">
+      <a href="#memorial" class="block py-1 hover:text-brass-400" onclick="toggleMenu()">Roll of Honour</a>
+      <a href="#chronology" class="block py-1 hover:text-brass-400" onclick="toggleMenu()">Chronology</a>
+      <a href="#dossier" class="block py-1 hover:text-brass-400" onclick="toggleMenu()">Document Dossier</a>
+      <a href="#legal" class="block py-1 hover:text-brass-400" onclick="toggleMenu()">Legal Jurisprudence</a>
+      <a href="#audio" class="block py-1 hover:text-brass-400" onclick="toggleMenu()">Oral Testimonies</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="relative overflow-hidden pt-16 pb-20 md:pt-24 md:pb-28 border-b border-obsidian-800 bg-gradient-to-b from-obsidian-900 via-obsidian-950 to-obsidian-950">
+    <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#c5a059_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none"></div>
+    
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+      
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-brass-500/30 bg-brass-500/10 text-brass-400 text-xs tracking-widest uppercase font-mono mb-6">
+        <span class="w-2 h-2 rounded-full bg-brass-400 animate-pulse"></span>
+        Archival Reference Repository • 25 Years of Remembrance
+      </div>
+
+      <h1 class="text-3xl sm:text-5xl lg:text-6xl font-display font-extrabold tracking-tight text-white leading-tight text-balance">
+        The Bulwark at Gate 12: <br class="hidden sm:inline">
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-brass-300 via-brass-400 to-amber-200">
+          The 2001 Attack & The 2002 Crisis
+        </span>
+      </h1>
+
+      <p class="mt-6 text-base sm:text-lg font-prose text-gray-300 max-w-3xl mx-auto leading-relaxed text-balance">
+        At 11:40 AM on 13 December 2001, five heavily armed militants breached the perimeter of India’s Parliament in an Ambassador car. Nine vigilant defenders laid down their lives to safeguard the sovereign legislature—igniting <strong>Operation Parakram</strong>, the historic POTA joint parliament enactment, and a landmark constitutional trial in 2002.
+      </p>
+
+      <!-- Key Archival Metrics Bar -->
+      <div class="mt-10 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto text-left">
+        <div class="p-4 rounded-lg bg-obsidian-900/90 border border-obsidian-800">
+          <div class="text-brass-400 text-2xl font-display font-bold">9</div>
+          <div class="text-xs uppercase tracking-wider text-gray-400 mt-1 font-sans">Martyrs Honoured</div>
+          <div class="text-[11px] text-gray-400 font-mono mt-0.5">Ashok & Gallantry Citations</div>
+        </div>
+        <div class="p-4 rounded-lg bg-obsidian-900/90 border border-obsidian-800">
+          <div class="text-brass-400 text-2xl font-display font-bold">10 Months</div>
+          <div class="text-xs uppercase tracking-wider text-gray-400 mt-1 font-sans">Operation Parakram</div>
+          <div class="text-[11px] text-gray-400 font-mono mt-0.5">Largest Mobilization (1971–Present)</div>
+        </div>
+        <div class="p-4 rounded-lg bg-obsidian-900/90 border border-obsidian-800">
+          <div class="text-brass-400 text-2xl font-display font-bold">March 2002</div>
+          <div class="text-xs uppercase tracking-wider text-gray-400 mt-1 font-sans">POTA Joint Session</div>
+          <div class="text-[11px] text-gray-400 font-mono mt-0.5">Only 3rd Joint Sitting in India</div>
+        </div>
+        <div class="p-4 rounded-lg bg-obsidian-900/90 border border-obsidian-800">
+          <div class="text-brass-400 text-2xl font-display font-bold">Dec 2002</div>
+          <div class="text-xs uppercase tracking-wider text-gray-400 mt-1 font-sans">Special Court Verdict</div>
+          <div class="text-[11px] text-gray-400 font-mono mt-0.5">State v. Navjot Sandhu Records</div>
+        </div>
+      </div>
+
+      <!-- Quick Nav Buttons -->
+      <div class="mt-8 flex flex-wrap justify-center gap-4">
+        <a href="#memorial" class="px-6 py-3 rounded bg-brass-500 hover:bg-brass-400 text-black font-semibold text-xs uppercase tracking-widest transition-colors shadow-lg shadow-brass-500/10">
+          Read Citations & Roll of Honour
+        </a>
+        <a href="#chronology" class="px-6 py-3 rounded bg-obsidian-800 hover:bg-obsidian-700 text-gray-200 border border-obsidian-700 font-semibold text-xs uppercase tracking-widest transition-colors">
+          Step-Through Timeline
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Memorial Wall & Roll of Honour Section -->
+  <section id="memorial" class="py-20 border-b border-obsidian-800 bg-obsidian-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 border-b border-obsidian-800 pb-6 gap-6">
+        <div>
+          <span class="text-brass-400 text-xs font-mono uppercase tracking-widest">Roll of Supreme Sacrifice</span>
+          <h2 class="text-3xl sm:text-4xl font-display font-bold text-white mt-1">Roll of Honour: The Defenders</h2>
+          <p class="font-prose text-sm text-gray-400 mt-2 max-w-2xl">
+            Eight Delhi Police and Parliament security personnel, along with one CPWD staff member, prevented the armed attackers from breaching inner doors where over 200 members of Parliament and Cabinet ministers were present.
+          </p>
+        </div>
+
+        <!-- Floral Homage Global Interactive Counter Card -->
+        <div class="bg-obsidian-850 p-4 rounded-lg border border-brass-500/30 flex items-center space-x-4 shadow-md">
+          <div class="w-12 h-12 rounded-full bg-brass-500/10 border border-brass-500/40 flex items-center justify-center text-brass-400 text-2xl select-none animate-flame">
+            🕯️
+          </div>
+          <div>
+            <div class="text-[11px] uppercase tracking-wider text-gray-400 font-sans">Floral Tributes Paid</div>
+            <div class="text-2xl font-mono font-bold text-brass-300" id="global-homage-counter">14,289</div>
+          </div>
+          <button onclick="payFloralHomage()" class="px-4 py-2 rounded bg-brass-500/20 hover:bg-brass-500 hover:text-black border border-brass-500/50 text-brass-300 text-xs uppercase tracking-wider font-semibold transition active:scale-95">
+            Offer Tribute
+          </button>
+        </div>
+      </div>
+
+      <!-- Martyr Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- Kamlesh Kumari -->
+        <div class="bg-obsidian-850 border border-obsidian-700/80 rounded-lg p-6 hover:border-brass-500/60 transition group flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between">
+              <span class="px-2.5 py-1 rounded bg-amber-950/60 text-amber-300 border border-amber-800 text-[10px] font-mono uppercase">
+                Ashoka Chakra (Posthumous)
+              </span>
+              <span class="text-gray-400 text-xs font-mono">CRPF 88 Mahila Bn.</span>
+            </div>
+            <h3 class="font-display text-xl font-bold text-white mt-4 group-hover:text-brass-300 transition-colors">
+              Kamlesh Kumari Yadav
+            </h3>
+            <p class="text-xs text-brass-500 font-mono mt-0.5">Constable • Gate No. 1 Security Post</p>
+            <p class="font-prose text-xs text-gray-300 mt-3 leading-relaxed">
+              First to sight the counterfeit Ambassador car entering Gate 11/12. She sounded the alert whistle and was shot by militants while sealing the entrance, alerting all other security cordons in seconds.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-obsidian-800 flex items-center justify-between">
+            <button onclick="openCitation('kamlesh')" class="text-xs uppercase tracking-wider text-brass-400 hover:text-brass-300 font-semibold flex items-center gap-1">
+              Read Official Citation &rarr;
+            </button>
+            <span class="text-[11px] text-gray-400 font-mono">Supreme Gallantry</span>
+          </div>
+        </div>
+
+        <!-- J.P. Yadav -->
+        <div class="bg-obsidian-850 border border-obsidian-700/80 rounded-lg p-6 hover:border-brass-500/60 transition group flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between">
+              <span class="px-2.5 py-1 rounded bg-obsidian-800 text-gray-300 border border-obsidian-700 text-[10px] font-mono uppercase">
+                Watch & Ward Staff
+              </span>
+              <span class="text-gray-400 text-xs font-mono">Parliament Secretariat</span>
+            </div>
+            <h3 class="font-display text-xl font-bold text-white mt-4 group-hover:text-brass-300 transition-colors">
+              Jagdish Prasad Yadav
+            </h3>
+            <p class="text-xs text-brass-500 font-mono mt-0.5">Security Assistant • Parliament House</p>
+            <p class="font-prose text-xs text-gray-300 mt-3 leading-relaxed">
+              Upon hearing the gunfire and crash near the Vice-President's motorcade, he ran towards Gate 11 to manually bolt the iron gates shut from outside, sacrificing himself under heavy fire.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-obsidian-800 flex items-center justify-between">
+            <button onclick="openCitation('jpyadav')" class="text-xs uppercase tracking-wider text-brass-400 hover:text-brass-300 font-semibold flex items-center gap-1">
+              Read Official Citation &rarr;
+            </button>
+            <span class="text-[11px] text-gray-400 font-mono">Inner Gate Security</span>
+          </div>
+        </div>
+
+        <!-- Matbar Singh Negi -->
+        <div class="bg-obsidian-850 border border-obsidian-700/80 rounded-lg p-6 hover:border-brass-500/60 transition group flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between">
+              <span class="px-2.5 py-1 rounded bg-obsidian-800 text-gray-300 border border-obsidian-700 text-[10px] font-mono uppercase">
+                Watch & Ward Staff
+              </span>
+              <span class="text-gray-400 text-xs font-mono">Parliament Secretariat</span>
+            </div>
+            <h3 class="font-display text-xl font-bold text-white mt-4 group-hover:text-brass-300 transition-colors">
+              Matbar Singh Negi
+            </h3>
+            <p class="text-xs text-brass-500 font-mono mt-0.5">Security Assistant • Building Portals</p>
+            <p class="font-prose text-xs text-gray-300 mt-3 leading-relaxed">
+              Coordinated the locking of the interior wooden doorways leading directly into the Central Hall where the Prime Minister, Leader of Opposition, and parliamentarians were trapped inside.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-obsidian-800 flex items-center justify-between">
+            <button onclick="openCitation('matbar')" class="text-xs uppercase tracking-wider text-brass-400 hover:text-brass-300 font-semibold flex items-center gap-1">
+              Read Official Citation &rarr;
+            </button>
+            <span class="text-[11px] text-gray-400 font-mono">Chamber Defense</span>
+          </div>
+        </div>
+
+        <!-- Delhi Police Martyrs: N.K. Ram Pal & Om Prakash -->
+        <div class="bg-obsidian-850 border border-obsidian-700/80 rounded-lg p-6 hover:border-brass-500/60 transition group flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between">
+              <span class="px-2.5 py-1 rounded bg-blue-950/60 text-blue-300 border border-blue-900 text-[10px] font-mono uppercase">
+                Kirti Chakra (Posthumous)
+              </span>
+              <span class="text-gray-400 text-xs font-mono">Delhi Police</span>
+            </div>
+            <h3 class="font-display text-xl font-bold text-white mt-4 group-hover:text-brass-300 transition-colors">
+              ASI Ram Pal & HC Om Prakash
+            </h3>
+            <p class="text-xs text-brass-500 font-mono mt-0.5">Delhi Police Security Perimeter Force</p>
+            <p class="font-prose text-xs text-gray-300 mt-3 leading-relaxed">
+              Took defensive cover beside the portico columns and exchanged intense gunfire with two assailants equipped with assault rifles and grenade launchers, confining them to the tarmac.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-obsidian-800 flex items-center justify-between">
+            <button onclick="openCitation('delhipolice1')" class="text-xs uppercase tracking-wider text-brass-400 hover:text-brass-300 font-semibold flex items-center gap-1">
+              Read Official Citation &rarr;
+            </button>
+            <span class="text-[11px] text-gray-400 font-mono">Portico Defense</span>
+          </div>
+        </div>
+
+        <!-- Delhi Police Martyrs: Bijender, Ghanshyam, Deshraj -->
+        <div class="bg-obsidian-850 border border-obsidian-700/80 rounded-lg p-6 hover:border-brass-500/60 transition group flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between">
+              <span class="px-2.5 py-1 rounded bg-blue-950/60 text-blue-300 border border-blue-900 text-[10px] font-mono uppercase">
+                Shaurya Chakra (Posthumous)
+              </span>
+              <span class="text-gray-400 text-xs font-mono">Delhi Police Security</span>
+            </div>
+            <h3 class="font-display text-xl font-bold text-white mt-4 group-hover:text-brass-300 transition-colors">
+              Bijender, Ghanshyam & Deshraj
+            </h3>
+            <p class="text-xs text-brass-500 font-mono mt-0.5">Constables • Special Guard Division</p>
+            <p class="font-prose text-xs text-gray-300 mt-3 leading-relaxed">
+              Closed in on the remaining attackers attempting to reach Gate 1. When one assailant detonated his suicide vest, these officers took the brunt of the shrapnel to protect surrounding staff.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-obsidian-800 flex items-center justify-between">
+            <button onclick="openCitation('delhipolice2')" class="text-xs uppercase tracking-wider text-brass-400 hover:text-brass-300 font-semibold flex items-center gap-1">
+              Read Official Citation &rarr;
+            </button>
+            <span class="text-[11px] text-gray-400 font-mono">Tactical Neutralization</span>
+          </div>
+        </div>
+
+        <!-- Nanak Chand & Anoop Singh (CPWD / Driver) -->
+        <div class="bg-obsidian-850 border border-obsidian-700/80 rounded-lg p-6 hover:border-brass-500/60 transition group flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between">
+              <span class="px-2.5 py-1 rounded bg-obsidian-800 text-gray-300 border border-obsidian-700 text-[10px] font-mono uppercase">
+                Civil Service & Support
+              </span>
+              <span class="text-gray-400 text-xs font-mono">CPWD & Parliament Staff</span>
+            </div>
+            <h3 class="font-display text-xl font-bold text-white mt-4 group-hover:text-brass-300 transition-colors">
+              Deshraj, Nanak Chand & Anoop Singh
+            </h3>
+            <p class="text-xs text-brass-500 font-mono mt-0.5">Gardener & Supporting Drivers</p>
+            <p class="font-prose text-xs text-gray-300 mt-3 leading-relaxed">
+              Non-combatant staff who assisted the security cordon by shielding wounded personnel and relaying tactical directions across the courtyards during active engagement.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-obsidian-800 flex items-center justify-between">
+            <button onclick="openCitation('support')" class="text-xs uppercase tracking-wider text-brass-400 hover:text-brass-300 font-semibold flex items-center gap-1">
+              Read Official Citation &rarr;
+            </button>
+            <span class="text-[11px] text-gray-400 font-mono">Civilian Bravery</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Chronology & 2002 Crisis Timeline Scrubber -->
+  <section id="chronology" class="py-20 border-b border-obsidian-800 bg-obsidian-950">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="text-brass-400 text-xs font-mono uppercase tracking-widest">Chronological Master Index (2001–2002)</span>
+        <h2 class="text-3xl sm:text-4xl font-display font-bold text-white mt-1">The Critical 380 Days</h2>
+        <p class="font-prose text-sm text-gray-400 mt-2">
+          From the perimeter breach on 13 December 2001 to the trial court verdicts and demobilization at the close of 2002. Click any phase below to explore records and geopolitical impacts.
+        </p>
+      </div>
+
+      <!-- Timeline Phase Selectors -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-2 mb-10 bg-obsidian-900 p-2 rounded-lg border border-obsidian-800" id="timeline-tabs">
+        <button onclick="setTimelinePhase(0)" class="timeline-tab active px-3 py-2.5 rounded text-left text-xs font-semibold uppercase tracking-wider transition bg-brass-500 text-black">
+          <div class="font-mono text-[10px] opacity-75">13 Dec 2001</div>
+          <div>1. The Incursion</div>
+        </button>
+        <button onclick="setTimelinePhase(1)" class="timeline-tab px-3 py-2.5 rounded text-left text-xs font-semibold uppercase tracking-wider transition text-gray-400 hover:text-white">
+          <div class="font-mono text-[10px] opacity-75">Dec 2001 – Oct 2002</div>
+          <div>2. Op Parakram</div>
+        </button>
+        <button onclick="setTimelinePhase(2)" class="timeline-tab px-3 py-2.5 rounded text-left text-xs font-semibold uppercase tracking-wider transition text-gray-400 hover:text-white">
+          <div class="font-mono text-[10px] opacity-75">March 2002</div>
+          <div>3. POTA Enactment</div>
+        </button>
+        <button onclick="setTimelinePhase(3)" class="timeline-tab px-3 py-2.5 rounded text-left text-xs font-semibold uppercase tracking-wider transition text-gray-400 hover:text-white">
+          <div class="font-mono text-[10px] opacity-75">Dec 2002</div>
+          <div>4. Trial Verdicts</div>
+        </button>
+      </div>
+
+      <!-- Timeline Detail Display Card -->
+      <div id="timeline-display" class="bg-obsidian-900 border border-obsidian-800 rounded-xl p-6 sm:p-10 relative shadow-2xl">
+        <!-- Injected via JavaScript based on selected phase -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Document Dossier & Declassified Sources -->
+  <section id="dossier" class="py-20 border-b border-obsidian-800 bg-obsidian-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 pb-6 border-b border-obsidian-800 gap-6">
+        <div>
+          <span class="text-brass-400 text-xs font-mono uppercase tracking-widest">Public History & Judicial Dossier</span>
+          <h2 class="text-3xl sm:text-4xl font-display font-bold text-white mt-1">Primary Source Dossier</h2>
+          <p class="font-prose text-sm text-gray-400 mt-2 max-w-2xl">
+            Searchable collection of official judgments, parliamentary debate records, demarches, and military movement communications from the 2001–2002 period.
+          </p>
+        </div>
+
+        <!-- Live Search Bar -->
+        <div class="w-full md:w-80 relative">
+          <input 
+            type="text" 
+            id="dossier-search" 
+            oninput="handleSearch(this.value)" 
+            placeholder="Search records, POTA, Parakram..." 
+            class="w-full bg-obsidian-950 border border-obsidian-700 rounded-lg px-4 py-2.5 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-brass-400 font-mono"
+          >
+          <span class="absolute right-3 top-2.5 text-gray-500 text-sm">🔍</span>
+        </div>
+      </div>
+
+      <!-- Category Filter Pills -->
+      <div class="flex flex-wrap gap-2 mb-8" id="filter-pills">
+        <button onclick="filterCategory('all')" class="filter-btn active-pill px-3.5 py-1.5 rounded-full text-xs font-mono uppercase font-semibold bg-brass-500 text-black border border-brass-400">All Sources (6)</button>
+        <button onclick="filterCategory('legal')" class="filter-btn px-3.5 py-1.5 rounded-full text-xs font-mono uppercase font-semibold bg-obsidian-800 text-gray-300 border border-obsidian-700 hover:border-gray-500">Judicial Verdicts</button>
+        <button onclick="filterCategory('military')" class="filter-btn px-3.5 py-1.5 rounded-full text-xs font-mono uppercase font-semibold bg-obsidian-800 text-gray-300 border border-obsidian-700 hover:border-gray-500">Military Mobilization</button>
+        <button onclick="filterCategory('diplomacy')" class="filter-btn px-3.5 py-1.5 rounded-full text-xs font-mono uppercase font-semibold bg-obsidian-800 text-gray-300 border border-obsidian-700 hover:border-gray-500">Diplomatic Notes</button>
+        <button onclick="filterCategory('legislation')" class="filter-btn px-3.5 py-1.5 rounded-full text-xs font-mono uppercase font-semibold bg-obsidian-800 text-gray-300 border border-obsidian-700 hover:border-gray-500">Legislative Hansards</button>
+      </div>
+
+      <!-- Dossier Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="dossier-grid">
+        
+        <!-- Doc 1 -->
+        <div class="dossier-card legal bg-obsidian-950 border border-obsidian-800 rounded-lg p-5 flex flex-col justify-between hover:border-brass-500/50 transition">
+          <div>
+            <div class="flex items-center justify-between text-[11px] font-mono mb-2">
+              <span class="text-blue-400 uppercase">Judicial Verdict</span>
+              <span class="text-gray-400">18 Dec 2002</span>
+            </div>
+            <h4 class="font-display text-white text-base font-bold">State v. Mohd. Afzal & Ors: Special Court Judgment</h4>
+            <p class="font-prose text-xs text-gray-300 mt-2.5 leading-relaxed">
+              Presided by Special Judge S.N. Dhingra. The initial trial court verdict sentencing four accused under POTA Sections 3(2), 3(4), and IPC Section 121 (Waging War).
+            </p>
+          </div>
+          <div class="mt-5 pt-3 border-t border-obsidian-800 flex justify-between items-center text-xs">
+            <span class="font-mono text-[10px] text-gray-400">Ref: FIR 384/2001 Special Cell</span>
+            <button onclick="previewDocument('pota-verdict-2002')" class="text-brass-400 hover:underline font-medium">Inspect Record</button>
+          </div>
+        </div>
+
+        <!-- Doc 2 -->
+        <div class="dossier-card military bg-obsidian-950 border border-obsidian-800 rounded-lg p-5 flex flex-col justify-between hover:border-brass-500/50 transition">
+          <div>
+            <div class="flex items-center justify-between text-[11px] font-mono mb-2">
+              <span class="text-amber-400 uppercase">Military Mobilization</span>
+              <span class="text-gray-400">18 Dec 2001</span>
+            </div>
+            <h4 class="font-display text-white text-base font-bold">Cabinet Committee on Security (CCS) Order: Operation Parakram</h4>
+            <p class="font-prose text-xs text-gray-300 mt-2.5 leading-relaxed">
+              Formal mobilization directive ordering 500,000 troops to the western frontier, forward strike corps deployment, and severance of civilian air and bus transit links.
+            </p>
+          </div>
+          <div class="mt-5 pt-3 border-t border-obsidian-800 flex justify-between items-center text-xs">
+            <span class="font-mono text-[10px] text-gray-400">Ref: MoD / AHQ Operational Directive</span>
+            <button onclick="previewDocument('parakram-directive')" class="text-brass-400 hover:underline font-medium">Inspect Record</button>
+          </div>
+        </div>
+
+        <!-- Doc 3 -->
+        <div class="dossier-card legislation bg-obsidian-950 border border-obsidian-800 rounded-lg p-5 flex flex-col justify-between hover:border-brass-500/50 transition">
+          <div>
+            <div class="flex items-center justify-between text-[11px] font-mono mb-2">
+              <span class="text-purple-400 uppercase">Legislative Hansard</span>
+              <span class="text-gray-400">26 Mar 2002</span>
+            </div>
+            <h4 class="font-display text-white text-base font-bold">Joint Parliamentary Sitting on POTA (Act No. 15 of 2002)</h4>
+            <p class="font-prose text-xs text-gray-300 mt-2.5 leading-relaxed">
+              Official verbatim proceedings of the joint sitting in the Central Hall, passing the Prevention of Terrorism Act after rejection in the Rajya Sabha.
+            </p>
+          </div>
+          <div class="mt-5 pt-3 border-t border-obsidian-800 flex justify-between items-center text-xs">
+            <span class="font-mono text-[10px] text-gray-400">Ref: Lok Sabha Secretariat Record</span>
+            <button onclick="previewDocument('pota-hansard')" class="text-brass-400 hover:underline font-medium">Inspect Record</button>
+          </div>
+        </div>
+
+        <!-- Doc 4 -->
+        <div class="dossier-card diplomacy bg-obsidian-950 border border-obsidian-800 rounded-lg p-5 flex flex-col justify-between hover:border-brass-500/50 transition">
+          <div>
+            <div class="flex items-center justify-between text-[11px] font-mono mb-2">
+              <span class="text-emerald-400 uppercase">Diplomatic Notes</span>
+              <span class="text-gray-400">14 Dec 2001</span>
+            </div>
+            <h4 class="font-display text-white text-base font-bold">Ministry of External Affairs Demarche on Jaish & Lashkar</h4>
+            <p class="font-prose text-xs text-gray-300 mt-2.5 leading-relaxed">
+              Official diplomatic note delivered to the High Commissioner regarding organizational linkages of the attackers and demands for extraditions of listed fugitives.
+            </p>
+          </div>
+          <div class="mt-5 pt-3 border-t border-obsidian-800 flex justify-between items-center text-xs">
+            <span class="font-mono text-[10px] text-gray-400">Ref: MEA Diplomatic Cable 2001/44</span>
+            <button onclick="previewDocument('mea-demarche')" class="text-brass-400 hover:underline font-medium">Inspect Record</button>
+          </div>
+        </div>
+
+        <!-- Doc 5 -->
+        <div class="dossier-card legal bg-obsidian-950 border border-obsidian-800 rounded-lg p-5 flex flex-col justify-between hover:border-brass-500/50 transition">
+          <div>
+            <div class="flex items-center justify-between text-[11px] font-mono mb-2">
+              <span class="text-blue-400 uppercase">Judicial Verdict</span>
+              <span class="text-gray-400">2005 (AIR 2005 SC 3819)</span>
+            </div>
+            <h4 class="font-display text-white text-base font-bold">State (NCT of Delhi) v. Navjot Sandhu: Supreme Court Ruling</h4>
+            <p class="font-prose text-xs text-gray-300 mt-2.5 leading-relaxed">
+              The definitive Supreme Court judgment reviewing the 2002 trial convictions, laying down evidentiary standards for call records (Section 65B) and police confessions.
+            </p>
+          </div>
+          <div class="mt-5 pt-3 border-t border-obsidian-800 flex justify-between items-center text-xs">
+            <span class="font-mono text-[10px] text-gray-400">Bench: P.V. Reddi & P.P. Naolekar, JJ.</span>
+            <button onclick="previewDocument('sc-navjot-sandhu')" class="text-brass-400 hover:underline font-medium">Inspect Record</button>
+          </div>
+        </div>
+
+        <!-- Doc 6 -->
+        <div class="dossier-card military bg-obsidian-950 border border-obsidian-800 rounded-lg p-5 flex flex-col justify-between hover:border-brass-500/50 transition">
+          <div>
+            <div class="flex items-center justify-between text-[11px] font-mono mb-2">
+              <span class="text-amber-400 uppercase">Military Mobilization</span>
+              <span class="text-gray-400">16 Oct 2002</span>
+            </div>
+            <h4 class="font-display text-white text-base font-bold">Cabinet Committee on Security: Strategic Disengagement Order</h4>
+            <p class="font-prose text-xs text-gray-300 mt-2.5 leading-relaxed">
+              Strategic evaluation concluding the 10-month border standoff, ordering calibrated redeployment following the successful completion of the Jammu & Kashmir assembly elections.
+            </p>
+          </div>
+          <div class="mt-5 pt-3 border-t border-obsidian-800 flex justify-between items-center text-xs">
+            <span class="font-mono text-[10px] text-gray-400">Ref: CCS/2002/Resolution 81</span>
+            <button onclick="previewDocument('disengagement-order')" class="text-brass-400 hover:underline font-medium">Inspect Record</button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- No Results Fallback -->
+      <div id="no-results" class="hidden text-center py-12 text-gray-400 font-mono text-sm">
+        No documents match your query. Try searching for "POTA", "Parakram", or "Verdicts".
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Legal Jurisprudence & Analytical History Section -->
+  <section id="legal" class="py-20 border-b border-obsidian-800 bg-obsidian-950">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="text-brass-400 text-xs font-mono uppercase tracking-widest">Constitutional & Evidentiary Precedents</span>
+        <h2 class="text-3xl sm:text-4xl font-display font-bold text-white mt-1">Analytical Jurisprudence</h2>
+        <p class="font-prose text-sm text-gray-400 mt-2">
+          The legal proceedings born out of the attack altered Indian anti-terror jurisprudence, digital surveillance admissibility, and due-process standards for decades.
+        </p>
+      </div>
+
+      <!-- Legal Analysis Tabs -->
+      <div class="bg-obsidian-900 border border-obsidian-800 rounded-xl overflow-hidden shadow-2xl">
+        <div class="flex flex-wrap border-b border-obsidian-800 bg-obsidian-850">
+          <button onclick="setLegalTab('tab-call-data')" id="btn-tab-call-data" class="legal-tab-btn px-6 py-4 text-xs font-mono uppercase tracking-wider font-semibold border-b-2 border-brass-400 text-brass-400 bg-obsidian-900">
+            1. Electronic Call Records (Sec 65B)
+          </button>
+          <button onclick="setLegalTab('tab-pota-confessions')" id="btn-tab-pota-confessions" class="legal-tab-btn px-6 py-4 text-xs font-mono uppercase tracking-wider font-semibold border-b-2 border-transparent text-gray-400 hover:text-white">
+            2. POTA Police Confessions (Sec 32)
+          </button>
+          <button onclick="setLegalTab('tab-acquittals')" id="btn-tab-acquittals" class="legal-tab-btn px-6 py-4 text-xs font-mono uppercase tracking-wider font-semibold border-b-2 border-transparent text-gray-400 hover:text-white">
+            3. Appellate Acquittals & Due Process
+          </button>
+        </div>
+
+        <div class="p-6 sm:p-10">
+          
+          <!-- Tab 1 -->
+          <div id="tab-call-data" class="legal-tab-content space-y-4">
+            <div class="inline-block px-2.5 py-0.5 rounded bg-blue-950/80 text-blue-300 font-mono text-xs border border-blue-800 mb-2">
+              Indian Evidence Act Benchmarks
+            </div>
+            <h3 class="text-2xl font-display font-bold text-white">Call Detail Records (CDRs) as Substantive Evidence</h3>
+            <p class="font-prose text-sm text-gray-300 leading-relaxed">
+              The 2002 trial was India’s first major litigation where cellphone tower triangulation, SIM card purchase ledgers, and telephonic intercepts were pivotal. The prosecution tied the five deceased attackers to conspirators via intercepted satellite and mobile numbers.
+            </p>
+            <div class="p-4 rounded-lg bg-obsidian-950 border border-obsidian-800 font-mono text-xs text-gray-300 space-y-2">
+              <div class="text-brass-400 font-semibold">// Historical Precedent Established:</div>
+              <div>• Special Court admitted printouts of computerized call logs under Section 65.</div>
+              <div>• The Supreme Court later established strict evidentiary protocols for certifying secondary electronic media under Section 65B, setting the stage for subsequent cyber law reform.</div>
+            </div>
+          </div>
+
+          <!-- Tab 2 -->
+          <div id="tab-pota-confessions" class="legal-tab-content hidden space-y-4">
+            <div class="inline-block px-2.5 py-0.5 rounded bg-amber-950/80 text-amber-300 font-mono text-xs border border-amber-800 mb-2">
+              Statutory Tension
+            </div>
+            <h3 class="text-2xl font-display font-bold text-white">The Admissibility of Confessions to Police (Section 32 POTA)</h3>
+            <p class="font-prose text-sm text-gray-300 leading-relaxed">
+              Unlike the Indian Evidence Act—which excludes confessions made directly to police officers—POTA Section 32 permitted confessions recorded by an officer not below Superintendent rank to be admitted as evidence against the confessor.
+            </p>
+            <div class="p-4 rounded-lg bg-obsidian-950 border border-obsidian-800 font-mono text-xs text-gray-300 space-y-2">
+              <div class="text-brass-400 font-semibold">// Historical Precedent Established:</div>
+              <div>• The Supreme Court scrutinized the timing, voluntariness, and absence of independent legal counsel during confession recording.</div>
+              <div>• Confessions were strictly barred from being used as substantive evidence against co-accused, directly influencing the repeal of POTA in 2004.</div>
+            </div>
+          </div>
+
+          <!-- Tab 3 -->
+          <div id="tab-acquittals" class="legal-tab-content hidden space-y-4">
+            <div class="inline-block px-2.5 py-0.5 rounded bg-emerald-950/80 text-emerald-300 font-mono text-xs border border-emerald-800 mb-2">
+              Constitutional Safeguards
+            </div>
+            <h3 class="text-2xl font-display font-bold text-white">Appellate Reversal: The Acquittals of Geelani and Navjot Sandhu</h3>
+            <p class="font-prose text-sm text-gray-300 leading-relaxed">
+              The 2002 Special Court had originally convicted all four individuals brought to trial, handing down multiple capital sentences. However, the Delhi High Court (2003) and Supreme Court (2005) held that suspicion—no matter how grave—cannot substitute for legal proof.
+            </p>
+            <div class="p-4 rounded-lg bg-obsidian-950 border border-obsidian-800 font-mono text-xs text-gray-300 space-y-2">
+              <div class="text-brass-400 font-semibold">// Historical Precedent Established:</div>
+              <div>• S.A.R. Geelani was acquitted of all charges due to insufficient phone intercept corroboration.</div>
+              <div>• Navjot Sandhu (Afsan Guru) was acquitted of conspiracy charges, upholding civil liberties standards in anti-terror adjudication.</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Audio & Oral History Waveform Simulator -->
+  <section id="audio" class="py-20 border-b border-obsidian-800 bg-obsidian-900">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="text-brass-400 text-xs font-mono uppercase tracking-widest">Aural History & Eyewitness Testimonies</span>
+        <h2 class="text-3xl sm:text-4xl font-display font-bold text-white mt-1">Voices of 13 December</h2>
+        <p class="font-prose text-sm text-gray-400 mt-2">
+          Archival transcripts and simulated oral accounts recorded from security officers, parliamentary staff, and correspondents stationed inside Sansad Bhavan that morning.
+        </p>
+      </div>
+
+      <!-- Player Console -->
+      <div class="bg-obsidian-950 border border-obsidian-800 rounded-xl p-6 sm:p-8 max-w-3xl mx-auto shadow-2xl">
+        
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-obsidian-800">
+          <div>
+            <span class="text-brass-400 font-mono text-[11px] uppercase tracking-wider">Now Selected • Testimonial 01</span>
+            <h4 class="text-xl font-display font-bold text-white mt-0.5" id="audio-title">The First Whistle at Gate 1</h4>
+            <p class="text-xs text-gray-400 font-sans" id="audio-speaker">Eyewitness account: Constable CRPF Contingent</p>
+          </div>
+          <span class="font-mono text-xs text-brass-400 bg-brass-500/10 border border-brass-500/30 px-3 py-1 rounded">Archival Reel #01-A</span>
+        </div>
+
+        <!-- Waveform Simulation Visualizer -->
+        <div class="py-8 flex items-center justify-center gap-1.5 h-20" id="waveform-container">
+          <div class="w-1.5 bg-obsidian-700 rounded-full h-3"></div>
+          <div class="w-1.5 bg-obsidian-700 rounded-full h-6"></div>
+          <div class="w-1.5 bg-obsidian-700 rounded-full h-10"></div>
+          <div class="w-1.5 bg-obsidian-700 rounded-full h-4"></div>
+          <div class="w-1.5 bg-obsidian-700 rounded-full h-8"></div>
+          <div class="w-1.5 bg-obsidian-700 rounded-full h-14"></div>
+          <div class="w-1.5 bg-obsidian-700 rounded-full h-5"></div>
+          <div class="w-1.5 bg-obsidian-700 rounded-full h-12"></div>
+          <div class="w-1.5 bg-obsidian-700 rounded-full h-16"></div>
+          <div class="w-1.5 bg-obsidian-700 rounded-full h-6"></div>
+          <div class="w-1.5 bg-obsidian-700 rounded-full h-10"></div>
+          <div class="w-1.5 bg-obsidian-700 rounded-full h-4"></div>
+        </div>
+
+        <!-- Player Controls -->
+        <div class="flex items-center justify-between pt-4 border-t border-obsidian-800">
+          <div class="flex items-center gap-4">
+            <button onclick="toggleAudioSimulation()" id="play-pause-btn" class="w-12 h-12 rounded-full bg-brass-500 hover:bg-brass-400 text-black flex items-center justify-center font-bold transition shadow-lg shadow-brass-500/20 active:scale-95">
+              <span id="play-icon">▶</span>
+            </button>
+            <div>
+              <div class="text-xs font-mono text-white" id="audio-time">00:00 / 03:42</div>
+              <div class="text-[11px] text-gray-400 font-sans" id="audio-status">Press play to listen to oral transcript preview</div>
+            </div>
+          </div>
+
+          <!-- Select Different Reel -->
+          <div class="flex gap-2">
+            <button onclick="selectAudioReel(1)" class="audio-btn active px-3 py-1.5 rounded bg-brass-500/20 text-brass-300 border border-brass-500/40 text-xs font-mono font-semibold">01</button>
+            <button onclick="selectAudioReel(2)" class="audio-btn px-3 py-1.5 rounded bg-obsidian-900 text-gray-400 border border-obsidian-800 hover:text-white text-xs font-mono font-semibold">02</button>
+            <button onclick="selectAudioReel(3)" class="audio-btn px-3 py-1.5 rounded bg-obsidian-900 text-gray-400 border border-obsidian-800 hover:text-white text-xs font-mono font-semibold">03</button>
+          </div>
+        </div>
+
+        <!-- Oral Transcript Quote Snippet -->
+        <blockquote class="mt-6 p-4 rounded bg-obsidian-900 border-l-2 border-brass-500 text-xs font-prose italic text-gray-300 leading-relaxed" id="audio-quote">
+          "The car was trying to tail the Vice-President’s security motorcade. Kamlesh Yadav blew her whistle without a moment's hesitation. That single whistle forced them to panic and run into the gate pillars instead of the inner doors..."
+        </blockquote>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer & Research Colophon -->
+  <footer class="py-14 bg-obsidian-950 text-gray-400 text-xs border-t border-obsidian-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10 pb-10 border-b border-obsidian-800">
+        
+        <div class="md:col-span-2">
+          <div class="font-display font-bold text-white text-base tracking-widest flex items-center gap-2">
+            THE 13 DECEMBER ARCHIVE
+          </div>
+          <p class="font-prose text-xs text-gray-400 mt-2 max-w-md leading-relaxed">
+            An open educational and commemorative repository built for historical accuracy, scholarly research, and remembrance of the 2001–2002 events that shaped modern Indian national security and jurisprudence.
+          </p>
+          <div class="mt-4 font-mono text-[11px] text-brass-500">
+            Dedicated to the memory of the Nine Martyrs of Sansad Bhavan.
+          </div>
+        </div>
+
+        <div>
+          <h5 class="font-mono uppercase text-gray-300 tracking-wider text-xs mb-3 font-semibold">Archive Index</h5>
+          <ul class="space-y-2 font-sans">
+            <li><a href="#memorial" class="hover:text-brass-400 transition-colors">Roll of Honour</a></li>
+            <li><a href="#chronology" class="hover:text-brass-400 transition-colors">The 2001–2002 Chronology</a></li>
+            <li><a href="#dossier" class="hover:text-brass-400 transition-colors">Primary Source Judgments</a></li>
+            <li><a href="#legal" class="hover:text-brass-400 transition-colors">Section 65B & Evidence Jurisprudence</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h5 class="font-mono uppercase text-gray-300 tracking-wider text-xs mb-3 font-semibold">Research Sources</h5>
+          <ul class="space-y-2 font-mono text-[11px] text-gray-400">
+            <li>Supreme Court of India (AIR 2005 SC 3819)</li>
+            <li>Special Court Judgment FIR 384/2001</li>
+            <li>Parliament Hansards, March 2002 Joint Sitting</li>
+            <li>Ministry of External Affairs White Papers</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-center justify-between text-gray-400 font-mono text-[11px] gap-4">
+        <div>Non-profit digital humanities initiative. Public historical record.</div>
+        <div class="flex items-center gap-4">
+          <span>Solemn Commemoration</span>
+          <span>•</span>
+          <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="text-brass-400 hover:underline">Return to Top ↑</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Citation Modal (Hidden by default) -->
+  <div id="citation-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-obsidian-900 border border-brass-500/40 rounded-xl max-w-2xl w-full p-6 sm:p-8 relative shadow-2xl max-h-[90vh] overflow-y-auto">
+      <button onclick="closeModal('citation-modal')" class="absolute top-4 right-4 text-gray-400 hover:text-white font-mono text-lg p-2">✕</button>
+      
+      <div class="text-brass-400 font-mono text-xs uppercase tracking-widest" id="modal-citation-category">Official Citation</div>
+      <h3 class="font-display text-2xl font-bold text-white mt-1" id="modal-citation-name">Martyr Name</h3>
+      <div class="text-xs text-gray-400 font-mono mt-0.5" id="modal-citation-rank">Designation</div>
+      
+      <div class="mt-6 p-4 rounded bg-obsidian-950 border border-obsidian-800 text-xs font-prose text-gray-300 leading-relaxed space-y-4" id="modal-citation-text">
+        Citation details will load here.
+      </div>
+
+      <div class="mt-6 flex justify-end">
+        <button onclick="closeModal('citation-modal')" class="px-5 py-2 rounded bg-brass-500 hover:bg-brass-400 text-black text-xs font-semibold uppercase tracking-wider transition">
+          Close Record
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Document Dossier Modal (Hidden by default) -->
+  <div id="dossier-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-obsidian-900 border border-brass-500/40 rounded-xl max-w-2xl w-full p-6 sm:p-8 relative shadow-2xl max-h-[90vh] overflow-y-auto">
+      <button onclick="closeModal('dossier-modal')" class="absolute top-4 right-4 text-gray-400 hover:text-white font-mono text-lg p-2">✕</button>
+      
+      <div class="text-brass-400 font-mono text-xs uppercase tracking-widest" id="doc-modal-type">Declassified Archival Record</div>
+      <h3 class="font-display text-2xl font-bold text-white mt-1" id="doc-modal-title">Document Title</h3>
+      
+      <div class="mt-6 p-4 rounded bg-obsidian-950 border border-obsidian-800 text-xs font-mono text-gray-300 leading-relaxed space-y-3" id="doc-modal-content">
+        Document content overview will appear here.
+      </div>
+
+      <div class="mt-6 flex justify-end">
+        <button onclick="closeModal('dossier-modal')" class="px-5 py-2 rounded bg-brass-500 hover:bg-brass-400 text-black text-xs font-semibold uppercase tracking-wider transition">
+          Dismiss Record
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // State management
+    let homageCount = 14289;
+    let isAudioPlaying = false;
+    let audioTimer = null;
+    let audioSeconds = 0;
+
+    // Citations Dataset
+    const citationsData = {
+      kamlesh: {
+        category: "Ashoka Chakra Citation (Posthumous)",
+        name: "Constable Kamlesh Kumari Yadav",
+        rank: "CRPF Bravo Company, 88 Mahila Battalion",
+        text: `On the fateful morning of December 13, 2001, Constable Kamlesh Kumari was posted at Iron Gate No. 1 inside the Parliament House perimeter. At approximately 11:40 AM, an Ambassador car bearing registration number DL-3C-J-1527 moved aggressively towards the gate. Sensing suspicious movement and spotting weapons inside, she immediately sounded the warning alarm with her whistle and alerted the nearby Central Reserve Police Force and Delhi Police security detachments.<br><br>The armed militants, realizing their deception was exposed, opened fire upon her. Despite suffering fatal gunshot wounds, her alert allowed security staff to seal the main iron gate and close down access portals to the central chambers. She became the first woman personnel to be awarded the Ashoka Chakra posthumously.`
+      },
+      jpyadav: {
+        category: "Gallantry Citation (Posthumous)",
+        name: "Shri Jagdish Prasad Yadav",
+        rank: "Security Assistant, Parliament Watch & Ward Secretariat",
+        text: `Shri J.P. Yadav was stationed in the vicinity of Gate 11. Hearing the initial sound of automatic bursts, instead of taking cover away from the conflict zone, he rushed directly towards the approaching vehicle to shut and bolt the perimeter gates.<br><br>His immediate physical action delayed the assailants from driving the car directly up to the portico steps of Central Hall, confining the battle to the driveway. He laid down his life under direct hostile fire while shielding retreating civil staff.`
+      },
+      matbar: {
+        category: "Gallantry Citation (Posthumous)",
+        name: "Shri Matbar Singh Negi",
+        rank: "Security Assistant, Parliament Watch & Ward Secretariat",
+        text: `Shri Matbar Singh Negi was on duty at the interior entrances connecting the portico to the central chambers. Operating with exceptional alertness, he took decisive charge of locking the heavy exterior wooden and metal security doors leading into the main corridors where hundreds of ministers and Members of Parliament were in session.<br><br>His quick thinking secured the inner core of the complex before the armed assailants could gain close quarters entry.`
+      },
+      delhipolice1: {
+        category: "Kirti Chakra Citation (Posthumous)",
+        name: "ASI Ram Pal & HC Om Prakash",
+        rank: "Delhi Police Security Battalion",
+        text: `Assistant Sub-Inspector Ram Pal and Head Constable Om Prakash swiftly took position behind the pillars near Gate No. 12 upon sighting the armed infiltrators wielding AK-56 rifles and grenade attachments. Returning fire with standard issue firearms, they engaged the terrorists at point-blank range, pinning down two assailants on the courtyard lawn before sustaining fatal injuries.`
+      },
+      delhipolice2: {
+        category: "Shaurya Chakra Citation (Posthumous)",
+        name: "Constables Bijender, Ghanshyam & Deshraj",
+        rank: "Delhi Police Special Protective Division",
+        text: `Constables Bijender Singh, Ghanshyam, and Deshraj formed the tactical ring that contained the surviving terrorists near Gate 1. In the final phase of the engagement, as one militant's suicide vest was detonated, these officers stood firm on the front line to neutralize the threat and prevent further infiltration into the legislative chambers.`
+      },
+      support: {
+        category: "Commendation for Bravery",
+        name: "Shri Deshraj, Nanak Chand & Anoop Singh",
+        rank: "Civil Support & CPWD Maintenance Division",
+        text: `Gardener Deshraj and auxiliary vehicle drivers Nanak Chand and Anoop Singh displayed notable devotion to duty under heavy crossfire. Deshraj actively assisted security officers in navigating the perimeter gardens and helped move injured personnel to defensive barricades before losing his life.`
+      }
+    };
+
+    // Chronology Phases Dataset (2001 - 2002)
+    const chronologyPhases = [
+      {
+        phase: "Phase 1: The Breach & Neutralization",
+        date: "13 December 2001 (11:40 AM – 12:15 PM)",
+        badge: "Immediate Attack",
+        badgeColor: "bg-red-950/80 text-red-300 border-red-800",
+        summary: "Five armed militants in an Ambassador car with forged Ministry of Home Affairs stickers forced their way through Gate 12. Alerted by Constable Kamlesh Kumari and Watch & Ward personnel, security personnel engaged the militants in a 35-minute firefight. All five attackers were neutralized outside the main building; nine security and civil personnel made the supreme sacrifice.",
+        details: [
+          "11:40 AM: Ambassador car breaches Gate 12, hits Vice-President's motorcade escort vehicle.",
+          "11:42 AM: Attackers open automatic fire and throw grenades; alert sounded across Sansad Bhavan.",
+          "11:50 AM: One attacker detonates an explosive vest near Gate 1.",
+          "12:15 PM: All five attackers neutralized; building placed under complete tactical lockdown."
+        ]
+      },
+      {
+        phase: "Phase 2: Operation Parakram Mobilization",
+        date: "18 December 2001 – October 2002",
+        badge: "Strategic Border Standoff",
+        badgeColor: "bg-amber-950/80 text-amber-300 border-amber-800",
+        summary: "In response to the attack, India launched Operation Parakram, deploying an estimated 500,000 soldiers to the International Border and Line of Control. This became the largest military mobilization in South Asia since the 1971 war, sparking intense international diplomatic mediation to avert an escalating confrontation.",
+        details: [
+          "December 2001: India recalls its High Commissioner from Islamabad and bans transit flights.",
+          "January 2002: PM Atal Bihari Vajpayee addresses the nation; Indian Strike Corps take up offensive border positions.",
+          "May 2002: Following the Kaluchak attack, naval strike groups redeploy to the northern Arabian Sea.",
+          "October 2002: CCS formally approves calibrated strategic redeployment after regional elections conclude."
+        ]
+      },
+      {
+        phase: "Phase 3: The Historic POTA Joint Session",
+        date: "26 March 2002",
+        badge: "Legislative Reform",
+        badgeColor: "bg-purple-950/80 text-purple-300 border-purple-800",
+        summary: "Following intense political debates after the attack, the Prevention of Terrorism Ordinance was converted into the Prevention of Terrorism Act (POTA) during only the third joint session of both Houses of Parliament in Indian constitutional history, winning with 425 'Ayes' against 296 'Noes'.",
+        details: [
+          "Precedent: Joint sessions previously invoked only for Dowry Prohibition (1961) and Banking Commission (1978).",
+          "Core Debate: Interception of wiretaps, enhanced detention periods, and confessions to police officers under Section 32.",
+          "Application: Immediately applied to investigate and prosecute the Parliament attack conspiracy."
+        ]
+      },
+      {
+        phase: "Phase 4: Special Court Verdicts",
+        date: "18 December 2002",
+        badge: "Judicial Milestone",
+        badgeColor: "bg-blue-950/80 text-blue-300 border-blue-800",
+        summary: "After an expedited trial lasting roughly six months with over 80 witnesses examined, the designated POTA Special Court in Delhi delivered its landmark conviction order against four accused, beginning a seminal appellate trajectory through the Delhi High Court and Supreme Court.",
+        details: [
+          "Judge S.N. Dhingra hands down capital punishment under Section 302/120B IPC and Sections of POTA.",
+          "Case marked the earliest extensive judicial evaluation of computer printouts of cellphone tower signals.",
+          "The convictions were subsequently appealed, leading to the landmark 2005 Supreme Court ruling (State v. Navjot Sandhu)."
+        ]
+      }
+    ];
+
+    // Document Dossier Details Dataset
+    const documentDossierData = {
+      'pota-verdict-2002': {
+        type: 'Judicial Record • Special Court (POTA)',
+        title: 'State v. Mohd. Afzal & Ors. (18 December 2002)',
+        content: `<strong>Court:</strong> Designated Special Court under POTA, Patiala House Courts, New Delhi.<br>
+                  <strong>Presiding Officer:</strong> Shri S.N. Dhingra, Special Judge.<br><br>
+                  <strong>Case Synopsis:</strong> Chargesheet filed on 14 May 2002 following investigation by the Delhi Police Special Cell. Over 80 prosecution witnesses were examined during accelerated day-to-day hearings.<br><br>
+                  <strong>Primary Findings:</strong> The court held that the conspiracy aimed to eliminate the political leadership of the country and wage war against the Government of India. Four persons were initially convicted under provisions of the Indian Penal Code and POTA.`
+      },
+      'parakram-directive': {
+        type: 'Military Directive • Cabinet Committee on Security',
+        title: 'Operation Parakram Mobilization Directive (Dec 2001)',
+        content: `<strong>Authority:</strong> Cabinet Committee on Security (CCS), Government of India.<br>
+                  <strong>Scope:</strong> Full forward mobilization of Indian Army Strike Corps (1, 2, and 21 Corps) and defensive formations along the western frontier.<br><br>
+                  <strong>Operational Objective:</strong> Deterrence posture and demanding verifiable shutdown of cross-border militant transit infrastructure following the armed breach of the sovereign Parliament building.`
+      },
+      'pota-hansard': {
+        type: 'Parliamentary Hansard • 26 March 2002',
+        title: 'Verbatim Record: Third Joint Parliamentary Sitting',
+        content: `<strong>Context:</strong> Joint session of the Lok Sabha and Rajya Sabha convened under Article 108 of the Constitution.<br><br>
+                  <strong>Outcome:</strong> 425 votes in favour, 296 against.<br>
+                  <strong>Constitutional Significance:</strong> Passed the controversial Prevention of Terrorism Act, introducing new evidentiary rules for electronic surveillance data and confessions recorded by senior police officers.`
+      },
+      'mea-demarche': {
+        type: 'Diplomatic Demarche • MEA New Delhi',
+        title: 'Official Demarche on Terrorist Infrastructure (14 Dec 2001)',
+        content: `<strong>Issuing Authority:</strong> Ministry of External Affairs, New Delhi.<br>
+                  <strong>Delivered To:</strong> High Commissioner of Pakistan.<br><br>
+                  <strong>Contents:</strong> Formal presentation of material evidence indicating Jaish-e-Mohammed and Lashkar-e-Taiba linkages to the five attackers neutralized at the Parliament perimeter.`
+      },
+      'sc-navjot-sandhu': {
+        type: 'Supreme Court Landmark Judgment',
+        title: 'State (NCT of Delhi) v. Navjot Sandhu (AIR 2005 SC 3819)',
+        content: `<strong>Bench:</strong> Justice P. Venkatarama Reddi & Justice P.P. Naolekar.<br><br>
+                  <strong>Major Holdings:</strong><br>
+                  1. Affirmed strict admissibility conditions for secondary electronic evidence under Section 65B of the Indian Evidence Act.<br>
+                  2. Emphasized that confessions under POTA Section 32 cannot be used as substantive evidence against co-accused.<br>
+                  3. Overturned the convictions of S.A.R. Geelani and Navjot Sandhu (Afsan Guru) for lack of direct evidence.`
+      },
+      'disengagement-order': {
+        type: 'Strategic Directive • MoD / CCS',
+        title: 'Calibrated Border Redeployment Resolution (16 Oct 2002)',
+        content: `<strong>Decision:</strong> Order to transition from forward war-footing deployment to defensive peace-time postures along international borders.<br><br>
+                  <strong>Context:</strong> Followed the peaceful completion of the Jammu & Kashmir Legislative Assembly elections in autumn 2002, ending 10 months of continuous high-alert mobilization.`
+      }
+    };
+
+    // Homage Counter Function
+    function payFloralHomage() {
+      homageCount++;
+      const counterEl = document.getElementById('global-homage-counter');
+      counterEl.textContent = homageCount.toLocaleString();
+      counterEl.classList.add('text-amber-200');
+      setTimeout(() => {
+        counterEl.classList.remove('text-amber-200');
+      }, 300);
+    }
+
+    // Modal Control Functions
+    function openCitation(id) {
+      const data = citationsData[id];
+      if (!data) return;
+      document.getElementById('modal-citation-category').textContent = data.category;
+      document.getElementById('modal-citation-name').textContent = data.name;
+      document.getElementById('modal-citation-rank').textContent = data.rank;
+      document.getElementById('modal-citation-text').innerHTML = data.text;
+      
+      const modal = document.getElementById('citation-modal');
+      modal.classList.remove('hidden');
+    }
+
+    function previewDocument(id) {
+      const data = documentDossierData[id];
+      if (!data) return;
+      document.getElementById('doc-modal-type').textContent = data.type;
+      document.getElementById('doc-modal-title').textContent = data.title;
+      document.getElementById('doc-modal-content').innerHTML = data.content;
+      
+      const modal = document.getElementById('dossier-modal');
+      modal.classList.remove('hidden');
+    }
+
+    function closeModal(modalId) {
+      document.getElementById(modalId).classList.add('hidden');
+    }
+
+    // Close modals on clicking backdrop
+    window.addEventListener('click', (e) => {
+      if (e.target.id === 'citation-modal') closeModal('citation-modal');
+      if (e.target.id === 'dossier-modal') closeModal('dossier-modal');
+    });
+
+    // Mobile Menu Toggle
+    function toggleMenu() {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    }
+    document.getElementById('mobile-menu-btn').addEventListener('click', toggleMenu);
+
+    // Timeline Phase Renderer
+    function setTimelinePhase(index) {
+      const tabs = document.querySelectorAll('.timeline-tab');
+      tabs.forEach((tab, i) => {
+        if (i === index) {
+          tab.className = "timeline-tab active px-3 py-2.5 rounded text-left text-xs font-semibold uppercase tracking-wider transition bg-brass-500 text-black";
+        } else {
+          tab.className = "timeline-tab px-3 py-2.5 rounded text-left text-xs font-semibold uppercase tracking-wider transition text-gray-400 hover:text-white";
+        }
+      });
+
+      const p = chronologyPhases[index];
+      const container = document.getElementById('timeline-display');
+      
+      let detailsHtml = p.details.map(item => `
+        <li class="flex items-start gap-2 text-xs font-mono text-gray-300">
+          <span class="text-brass-400">▹</span>
+          <span>${item}</span>
+        </li>
+      `).join('');
+
+      container.innerHTML = `
+        <div class="flex flex-col md:flex-row md:items-center justify-between pb-6 border-b border-obsidian-800 gap-4">
+          <div>
+            <span class="text-xs font-mono px-2.5 py-1 rounded border ${p.badgeColor} uppercase tracking-wider">${p.badge}</span>
+            <h3 class="text-2xl font-display font-bold text-white mt-3">${p.phase}</h3>
+            <div class="text-xs text-brass-400 font-mono mt-1">${p.date}</div>
+          </div>
+          <span class="font-mono text-3xl font-extrabold text-obsidian-700">0${index + 1}</span>
+        </div>
+        
+        <p class="font-prose text-sm text-gray-300 mt-6 leading-relaxed">
+          ${p.summary}
+        </p>
+
+        <div class="mt-6 pt-6 border-t border-obsidian-800">
+          <div class="text-xs font-mono uppercase tracking-wider text-brass-400 mb-3">Key Chronological Markers:</div>
+          <ul class="space-y-2">
+            ${detailsHtml}
+          </ul>
+        </div>
+      `;
+    }
+
+    // Search and Filter Dossier
+    function handleSearch(query) {
+      const term = query.toLowerCase().trim();
+      const cards = document.querySelectorAll('.dossier-card');
+      let visibleCount = 0;
+
+      cards.forEach(card => {
+        const text = card.textContent.toLowerCase();
+        if (text.includes(term)) {
+          card.style.display = 'flex';
+          visibleCount++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      const noResults = document.getElementById('no-results');
+      if (visibleCount === 0) {
+        noResults.classList.remove('hidden');
+      } else {
+        noResults.classList.add('hidden');
+      }
+    }
+
+    function filterCategory(category) {
+      const buttons = document.querySelectorAll('.filter-btn');
+      buttons.forEach(btn => {
+        btn.className = "filter-btn px-3.5 py-1.5 rounded-full text-xs font-mono uppercase font-semibold bg-obsidian-800 text-gray-300 border border-obsidian-700 hover:border-gray-500";
+      });
+      event.target.className = "filter-btn active-pill px-3.5 py-1.5 rounded-full text-xs font-mono uppercase font-semibold bg-brass-500 text-black border border-brass-400";
+
+      const cards = document.querySelectorAll('.dossier-card');
+      let count = 0;
+      cards.forEach(card => {
+        if (category === 'all' || card.classList.contains(category)) {
+          card.style.display = 'flex';
+          count++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      document.getElementById('no-results').classList.add('hidden');
+    }
+
+    // Legal Jurisprudence Tabs
+    function setLegalTab(tabId) {
+      document.querySelectorAll('.legal-tab-content').forEach(el => el.classList.add('hidden'));
+      document.getElementById(tabId).classList.remove('hidden');
+
+      document.querySelectorAll('.legal-tab-btn').forEach(btn => {
+        btn.classList.remove('border-brass-400', 'text-brass-400', 'bg-obsidian-900');
+        btn.classList.add('border-transparent', 'text-gray-400');
+      });
+
+      const activeBtn = document.getElementById(`btn-${tabId}`);
+      activeBtn.classList.remove('border-transparent', 'text-gray-400');
+      activeBtn.classList.add('border-brass-400', 'text-brass-400', 'bg-obsidian-900');
+    }
+
+    // Audio Testimonies Player Simulation
+    const audioReels = {
+      1: {
+        title: "The First Whistle at Gate 1",
+        speaker: "Eyewitness account: Constable CRPF Contingent",
+        quote: `"The car was trying to tail the Vice-President’s security motorcade. Kamlesh Yadav blew her whistle without a moment's hesitation. That single whistle forced them to panic and run into the gate pillars instead of the inner doors..."`
+      },
+      2: {
+        title: "Securing the Central Portals",
+        speaker: "Eyewitness account: Parliament Watch & Ward Officer",
+        quote: `"Inside the Central Hall, we could hear staccato bursts. We bolted the heavy iron-reinforced wooden portals manually from within. Everyone understood that if those interior portals gave way, the entire cabinet was vulnerable."`
+      },
+      3: {
+        title: "The Final Stand at Gate 12",
+        speaker: "Operational brief: Delhi Police Special Cell Defender",
+        quote: `"There was zero hesitation. Every officer who ran toward the sound of gunfire knew they were facing AK-series automatic weapons with minimal cover. Their containment prevented entry into any operational chamber."`
+      }
+    };
+
+    function selectAudioReel(index) {
+      const reel = audioReels[index];
+      if (!reel) return;
+      document.getElementById('audio-title').textContent = reel.title;
+      document.getElementById('audio-speaker').textContent = reel.speaker;
+      document.getElementById('audio-quote').innerHTML = reel.quote;
+
+      // Update button styling
+      const buttons = document.querySelectorAll('.audio-btn');
+      buttons.forEach((btn, i) => {
+        if (i + 1 === index) {
+          btn.className = "audio-btn active px-3 py-1.5 rounded bg-brass-500/20 text-brass-300 border border-brass-500/40 text-xs font-mono font-semibold";
+        } else {
+          btn.className = "audio-btn px-3 py-1.5 rounded bg-obsidian-900 text-gray-400 border border-obsidian-800 hover:text-white text-xs font-mono font-semibold";
+        }
+      });
+
+      // Reset playback state
+      if (isAudioPlaying) toggleAudioSimulation();
+      audioSeconds = 0;
+      document.getElementById('audio-time').textContent = "00:00 / 03:42";
+    }
+
+    function toggleAudioSimulation() {
+      const btnIcon = document.getElementById('play-icon');
+      const status = document.getElementById('audio-status');
+      const bars = document.querySelectorAll('#waveform-container div');
+
+      if (!isAudioPlaying) {
+        isAudioPlaying = true;
+        btnIcon.textContent = '❚❚';
+        status.textContent = 'Playing oral history testimony preview...';
+        
+        bars.forEach(bar => {
+          bar.classList.remove('bg-obsidian-700');
+          bar.classList.add('bg-brass-400', 'animate-wave');
+        });
+
+        audioTimer = setInterval(() => {
+          audioSeconds++;
+          const mins = String(Math.floor(audioSeconds / 60)).padStart(2, '0');
+          const secs = String(audioSeconds % 60).padStart(2, '0');
+          document.getElementById('audio-time').textContent = `${mins}:${secs} / 03:42`;
+          if (audioSeconds >= 222) toggleAudioSimulation();
+        }, 1000);
+      } else {
+        isAudioPlaying = false;
+        btnIcon.textContent = '▶';
+        status.textContent = 'Paused. Click play to resume transcript audio.';
+        clearInterval(audioTimer);
+        bars.forEach(bar => {
+          bar.classList.remove('bg-brass-400', 'animate-wave');
+          bar.classList.add('bg-obsidian-700');
+        });
+      }
+    }
+
+    // Initialize initial phase
+    window.addEventListener('DOMContentLoaded', () => {
+      setTimelinePhase(0);
+    });
+  </script>
+</body>
+</html>
